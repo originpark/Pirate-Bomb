@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://wpit2k042er7"]
+
+[ext_resource type="Texture2D" uid="uid://cvhsj2jreyua2" path="res://asset/graphics/7-Objects/3-Bomb Bar/2-Full (Intermitent)/1.png" id="1_p6c8x"]
+[ext_resource type="Script" path="res://ui/energy_bar/energy_bar.gd" id="1_yy6ot"]
+[ext_resource type="Texture2D" uid="uid://rg0oslvw5ecp" path="res://asset/graphics/7-Objects/3-Bomb Bar/bar.png" id="2_3yqxt"]
+
+[node name="EnergyBar" type="Node2D"]
+script = ExtResource("1_yy6ot")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_top = -9.0
+offset_right = 39.0
+max_value = 1.0
+step = 0.0
+texture_under = ExtResource("1_p6c8x")
+texture_progress = ExtResource("2_3yqxt")
+texture_progress_offset = Vector2(6, 4)

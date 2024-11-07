@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bal5j2h5cd54w"]
+
+[ext_resource type="Texture2D" uid="uid://3yjf2vgcuo53" path="res://asset/graphics/8-Tile-Sets/platform03.png" id="1_7s2yw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdsje"]
+size = Vector2(62, 9)
+
+[node name="PlatformRightEdge" type="StaticBody2D" groups=["platform"]]
+collision_layer = 2
+collision_mask = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+texture = ExtResource("1_7s2yw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_vdsje")
+one_way_collision = true

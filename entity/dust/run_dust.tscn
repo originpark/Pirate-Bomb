@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://ba46gncfxc5vn"]
+
+[ext_resource type="Script" path="res://entity/dust/dust.gd" id="1_m7ig6"]
+[ext_resource type="Texture2D" uid="uid://ducox4qykiw1e" path="res://asset/graphics/7-Objects/13-Run Particles/1.png" id="1_qnhkr"]
+[ext_resource type="Texture2D" uid="uid://n60runqfoxn4" path="res://asset/graphics/7-Objects/13-Run Particles/2.png" id="2_bsxc0"]
+[ext_resource type="Texture2D" uid="uid://crf0pdx7hcby" path="res://asset/graphics/7-Objects/13-Run Particles/3.png" id="3_csclp"]
+[ext_resource type="Texture2D" uid="uid://kwuaa4y2r5su" path="res://asset/graphics/7-Objects/13-Run Particles/4.png" id="4_gi6hn"]
+[ext_resource type="Texture2D" uid="uid://ci4w0ckeeal4y" path="res://asset/graphics/7-Objects/13-Run Particles/5.png" id="5_uaxts"]
+[ext_resource type="Texture2D" uid="uid://bxtouat2x53dc" path="res://asset/graphics/7-Objects/13-Run Particles/6.png" id="6_oh8ka"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4c7tp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qnhkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bsxc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_csclp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gi6hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uaxts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oh8ka")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="RunDust" type="Node2D"]
+script = ExtResource("1_m7ig6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, -5)
+sprite_frames = SubResource("SpriteFrames_4c7tp")
+autoplay = "default"
+frame_progress = 0.789963
