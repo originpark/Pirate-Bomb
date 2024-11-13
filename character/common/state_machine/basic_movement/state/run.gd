@@ -17,12 +17,30 @@ func enter() -> void:
 	
 
 func physics_update(delta: float) -> void:
+	if target.stats.heart <= 0:
+		transition_to("Died")
+		return
+	if target.is_hurt:
+		transition_to("Hurt")
+		return
 	if not target.is_on_floor():
 		transition_to("Fall")
 		return
 	if target.action_just_pressed_jump:
 		transition_to("Jump")
 		return
+	if target.action_just_pressed_primary:
+		if target.can_attack:
+			transition_to(target.to_string() + "PrimaryAction")
+			return
+		else:
+			target.action_just_pressed_primary = false
+	if target.action_just_pressed_secondary:
+		if target.can_attack:
+			transition_to(target.to_string() + "SecondaryAction")
+			return
+		else:
+			target.action_just_pressed_secondary = false
 	if target.action_get_axis == 0:
 		transition_to("Idle")
 		return
@@ -30,11 +48,13 @@ func physics_update(delta: float) -> void:
 	if can_generate_dust and not is_creating_dust:
 		is_creating_dust = true
 		run_dust = DustCreator.generate(DustCreator.RUN_DUST, target.graphics, run_dust_offset)
-	target.velocity.x = target.action_get_axis * target.run_speed
+	if not target.v_lock:
+		target.velocity.x = target.action_get_axis * target.run_speed
 
 
 func exit() -> void:
-	target.velocity.x = 0
+	if not target.v_lock:
+		target.velocity.x = 0
 	if is_creating_dust:
 		if state_machine.next_state == "Jump":
 			run_dust.queue_free()

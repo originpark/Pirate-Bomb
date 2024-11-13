@@ -1,20 +1,38 @@
-[gd_scene load_steps=66 format=3 uid="uid://be855lp3frkhu"]
+[gd_scene load_steps=90 format=3 uid="uid://be855lp3frkhu"]
 
 [ext_resource type="Texture2D" uid="uid://d0h0wcwybwsj2" path="res://asset/graphics/1-Player-Bomb Guy/5-Fall/1.png" id="1_jq0v5"]
 [ext_resource type="Script" path="res://character/bomb_guy/bomb_guy.gd" id="1_uf167"]
+[ext_resource type="Texture2D" uid="uid://cay4svte41asv" path="res://asset/graphics/1-Player-Bomb Guy/8-Dead Hit/1.png" id="2_hkhfk"]
 [ext_resource type="Texture2D" uid="uid://bty2rcnomg4k7" path="res://asset/graphics/1-Player-Bomb Guy/5-Fall/2.png" id="2_rfhtw"]
 [ext_resource type="Texture2D" uid="uid://bkiu5nwccwmkk" path="res://asset/graphics/1-Player-Bomb Guy/6-Ground/1.png" id="3_gbyyt"]
+[ext_resource type="Texture2D" uid="uid://qtgogpbb0sih" path="res://asset/graphics/1-Player-Bomb Guy/8-Dead Hit/2.png" id="3_s0ngh"]
+[ext_resource type="Texture2D" uid="uid://rlnb47ysrt6k" path="res://asset/graphics/1-Player-Bomb Guy/8-Dead Hit/3.png" id="4_3deou"]
 [ext_resource type="Texture2D" uid="uid://p4udge06bodn" path="res://asset/graphics/1-Player-Bomb Guy/6-Ground/2.png" id="4_rksek"]
+[ext_resource type="Texture2D" uid="uid://cup1l0t0lxh07" path="res://asset/graphics/1-Player-Bomb Guy/8-Dead Hit/4.png" id="5_7wtg4"]
 [ext_resource type="Texture2D" uid="uid://3nk6au80vnh0" path="res://asset/graphics/1-Player-Bomb Guy/6-Ground/3.png" id="5_h18go"]
+[ext_resource type="Texture2D" uid="uid://chdmdcvv2rm6p" path="res://asset/graphics/1-Player-Bomb Guy/8-Dead Hit/5.png" id="6_o11nc"]
 [ext_resource type="Texture2D" uid="uid://brg783odfeg3u" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/1.png" id="6_yn7kf"]
+[ext_resource type="Texture2D" uid="uid://bd0y8rtqkpuf8" path="res://asset/graphics/1-Player-Bomb Guy/7-Hit/1.png" id="7_3fwl7"]
+[ext_resource type="Texture2D" uid="uid://03q2rbn7jl2x" path="res://asset/graphics/1-Player-Bomb Guy/8-Dead Hit/6.png" id="7_8b5vf"]
 [ext_resource type="Texture2D" uid="uid://bxfoc5xh86vij" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/2.png" id="7_l17fh"]
+[ext_resource type="Texture2D" uid="uid://vweuyvljj1g5" path="res://asset/graphics/1-Player-Bomb Guy/7-Hit/2.png" id="8_53cxd"]
+[ext_resource type="Texture2D" uid="uid://bulbl8omvjqyi" path="res://asset/graphics/1-Player-Bomb Guy/9-Dead Ground/1.png" id="8_itgyy"]
 [ext_resource type="Texture2D" uid="uid://cdrvh5obqnpgt" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/3.png" id="8_vs7e0"]
+[ext_resource type="Texture2D" uid="uid://darj3ve6lertw" path="res://asset/graphics/1-Player-Bomb Guy/9-Dead Ground/2.png" id="9_2ncqg"]
+[ext_resource type="Texture2D" uid="uid://dlosb6s5ke406" path="res://asset/graphics/1-Player-Bomb Guy/7-Hit/3.png" id="9_kngwt"]
 [ext_resource type="Texture2D" uid="uid://dwp6qp0xyo1rh" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/4.png" id="9_t2bd4"]
 [ext_resource type="Texture2D" uid="uid://23bnkmihcepu" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/5.png" id="10_4umgo"]
+[ext_resource type="Texture2D" uid="uid://b3ly7iumog2wn" path="res://asset/graphics/1-Player-Bomb Guy/9-Dead Ground/3.png" id="10_gcfri"]
+[ext_resource type="Texture2D" uid="uid://bg5wlquchakwk" path="res://asset/graphics/1-Player-Bomb Guy/7-Hit/4.png" id="10_wxrcx"]
+[ext_resource type="Texture2D" uid="uid://bnenj3f2ooe8b" path="res://asset/graphics/1-Player-Bomb Guy/9-Dead Ground/4.png" id="11_a5is4"]
 [ext_resource type="Texture2D" uid="uid://b4nfir2yor41j" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/6.png" id="11_hwcih"]
+[ext_resource type="Texture2D" uid="uid://dtv0nr7fer1fr" path="res://asset/graphics/1-Player-Bomb Guy/7-Hit/5.png" id="11_y8nj5"]
 [ext_resource type="Texture2D" uid="uid://s7q8k7nnv73h" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/7.png" id="12_bsgu8"]
+[ext_resource type="Texture2D" uid="uid://c44o0a6qchvrj" path="res://asset/graphics/1-Player-Bomb Guy/7-Hit/6.png" id="12_u1c0s"]
 [ext_resource type="Texture2D" uid="uid://bbr27l1itj64x" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/8.png" id="13_4n46h"]
+[ext_resource type="Texture2D" uid="uid://bcprh0rdodg76" path="res://asset/graphics/1-Player-Bomb Guy/7-Hit/7.png" id="13_xqa53"]
 [ext_resource type="Texture2D" uid="uid://qq7pwmbsaa0o" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/9.png" id="14_11p30"]
+[ext_resource type="Texture2D" uid="uid://dkxy62fpjaprr" path="res://asset/graphics/1-Player-Bomb Guy/7-Hit/8.png" id="14_aosms"]
 [ext_resource type="Texture2D" uid="uid://c56o48o7vwgke" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/10.png" id="15_f4efu"]
 [ext_resource type="Texture2D" uid="uid://cvjkanv1sbm1j" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/11.png" id="16_i5rti"]
 [ext_resource type="Texture2D" uid="uid://b7bgfuahop6uu" path="res://asset/graphics/1-Player-Bomb Guy/1-Idle/12.png" id="17_wyvc0"]
@@ -54,8 +72,12 @@
 [ext_resource type="Script" path="res://component/direction/direction.gd" id="51_23gsr"]
 [ext_resource type="Script" path="res://component/control_able/control.gd" id="52_2ao3w"]
 [ext_resource type="Script" path="res://component/gravity/gravity.gd" id="54_1tt8u"]
-[ext_resource type="Script" path="res://character/common/state_machine/basic_movement_state_machine.gd" id="54_ppcc8"]
+[ext_resource type="Script" path="res://character/common/state_machine/basic_movement/basic_state_machine.gd" id="54_ppcc8"]
+[ext_resource type="Script" path="res://character/bomb_guy/state/bomb_guy_primary_action.gd" id="55_wou1e"]
 [ext_resource type="PackedScene" uid="uid://wpit2k042er7" path="res://ui/energy_bar/energy_bar.tscn" id="56_1d75x"]
+[ext_resource type="Script" path="res://character/bomb_guy/state/bomb_guy_secondary_action.gd" id="56_38pv3"]
+[ext_resource type="Script" path="res://component/stats/stats.gd" id="59_inc1m"]
+[ext_resource type="Script" path="res://component/decelerate/decelerate.gd" id="60_cdvny"]
 
 [sub_resource type="Animation" id="Animation_63lvl"]
 length = 0.001
@@ -82,6 +104,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_u3ro1"]
+resource_name = "died"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"died"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_7rmje"]
@@ -140,6 +191,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_7clpl"]
+resource_name = "hurt"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_fbkev"]
@@ -234,8 +314,10 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1lu1"]
 _data = {
 "RESET": SubResource("Animation_63lvl"),
+"died": SubResource("Animation_u3ro1"),
 "fall": SubResource("Animation_7rmje"),
 "ground": SubResource("Animation_dtwks"),
+"hurt": SubResource("Animation_7clpl"),
 "idle": SubResource("Animation_fbkev"),
 "jump": SubResource("Animation_bawf3"),
 "run": SubResource("Animation_fqrwn")
@@ -243,6 +325,41 @@ _data = {
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5xl7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hkhfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s0ngh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3deou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7wtg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o11nc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8b5vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_itgyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2ncqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gcfri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_a5is4")
+}],
+"loop": false,
+"name": &"died",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_jq0v5")
@@ -266,6 +383,35 @@ animations = [{
 }],
 "loop": false,
 "name": &"ground",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_3fwl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_53cxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kngwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wxrcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y8nj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_u1c0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xqa53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_aosms")
+}],
+"loop": false,
+"name": &"hurt",
 "speed": 20.0
 }, {
 "frames": [{
@@ -423,7 +569,7 @@ animations = [{
 radius = 18.0
 height = 50.0
 
-[node name="BombGuy1" type="CharacterBody2D"]
+[node name="BombGuy" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_uf167")
 
@@ -451,9 +597,15 @@ script = ExtResource("54_1tt8u")
 use_costom_gravity = true
 custom_gravity = 1500.0
 
-[node name="BasicMovementStateMachine" type="Node" parent="."]
+[node name="BasicStateMachine" type="Node" parent="."]
 script = ExtResource("54_ppcc8")
 run_dust_offset = Vector2(-10, -5)
+
+[node name="BombGuyPrimaryAction" type="Node" parent="BasicStateMachine"]
+script = ExtResource("55_wou1e")
+
+[node name="BombGuySecondaryAction" type="Node" parent="BasicStateMachine"]
+script = ExtResource("56_38pv3")
 
 [node name="Direction" type="Node" parent="."]
 script = ExtResource("51_23gsr")
@@ -461,3 +613,12 @@ bind_graphics_scale = true
 
 [node name="EnergyBar" parent="." instance=ExtResource("56_1d75x")]
 position = Vector2(-19, -56)
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("59_inc1m")
+back_off_enable = true
+max_heart = 4
+
+[node name="Decelerate" type="Node" parent="."]
+script = ExtResource("60_cdvny")
+acceleration = 10

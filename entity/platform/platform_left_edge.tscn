@@ -7,7 +7,7 @@ size = Vector2(62, 10)
 
 [node name="PlatormLeftEdge" type="StaticBody2D" groups=["platform"]]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 29
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)

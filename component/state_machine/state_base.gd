@@ -6,7 +6,7 @@ extends Node
 var state_machine: StateMachine
 
 ## 所属对象
-var target: Node2D
+var target
 
 
 func enter() -> void:

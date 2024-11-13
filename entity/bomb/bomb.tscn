@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cix7oebf371a7"]
+[gd_scene load_steps=38 format=3 uid="uid://cix7oebf371a7"]
 
 [ext_resource type="Texture2D" uid="uid://v7ryi0ecy40j" path="res://asset/graphics/7-Objects/1-BOMB/2-Bomb On/1.png" id="1_lf170"]
 [ext_resource type="Script" path="res://entity/bomb/bomb.gd" id="1_pit57"]
@@ -20,6 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://d3oclcnd72o3o" path="res://asset/graphics/7-Objects/1-BOMB/2-Bomb On/9.png" id="9_y40ul"]
 [ext_resource type="Texture2D" uid="uid://d0po023wk545f" path="res://asset/graphics/7-Objects/1-BOMB/2-Bomb On/10.png" id="10_7f5fq"]
 [ext_resource type="Texture2D" uid="uid://b8ki5j4kncesn" path="res://asset/graphics/7-Objects/1-BOMB/3-Explotion/9.png" id="10_3028u"]
+[ext_resource type="Texture2D" uid="uid://dgnumkm6rlep5" path="res://asset/graphics/7-Objects/1-BOMB/1-Bomb Off/1.png" id="11_cdsj7"]
+[ext_resource type="Script" path="res://component/state_machine/state_machine.gd" id="21_i3h7n"]
+[ext_resource type="Script" path="res://entity/bomb/state/bomb_on.gd" id="22_y7kpn"]
+[ext_resource type="Script" path="res://entity/bomb/state/bomb_explotion.gd" id="23_cnrt1"]
+[ext_resource type="Script" path="res://entity/bomb/state/bomb_off.gd" id="25_1egmu"]
+[ext_resource type="Script" path="res://entity/bomb/state/bomb_take.gd" id="26_07nfl"]
+[ext_resource type="Script" path="res://component/interactable/interactable.gd" id="27_vgsju"]
+[ext_resource type="Script" path="res://component/stats/stats.gd" id="28_r8lhm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ocep2"]
 friction = 0.5
@@ -57,6 +65,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"explotion",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cdsj7")
+}],
+"loop": true,
+"name": &"off",
 "speed": 20.0
 }, {
 "frames": [{
@@ -151,6 +167,35 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
+[sub_resource type="Animation" id="Animation_owhnx"]
+resource_name = "off"
+length = 0.05
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"off"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_0rdu6"]
 resource_name = "on"
 length = 0.5
@@ -185,13 +230,18 @@ tracks/1/keys = {
 _data = {
 "RESET": SubResource("Animation_yoc30"),
 "explotion": SubResource("Animation_ttq0v"),
+"off": SubResource("Animation_owhnx"),
 "on": SubResource("Animation_0rdu6")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5rgtg"]
-radius = 14.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqtt8"]
+radius = 13.0384
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds6og"]
+size = Vector2(58, 168)
 
 [node name="Bomb" type="RigidBody2D"]
+z_index = 1
 collision_layer = 4
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_ocep2")
@@ -211,5 +261,38 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -14)
-shape = SubResource("CircleShape2D_5rgtg")
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_nqtt8")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("21_i3h7n")
+initial_state = NodePath("BombOn")
+
+[node name="BombOn" type="Node" parent="StateMachine"]
+script = ExtResource("22_y7kpn")
+
+[node name="BombExplotion" type="Node" parent="StateMachine"]
+script = ExtResource("23_cnrt1")
+
+[node name="BombOff" type="Node" parent="StateMachine"]
+script = ExtResource("25_1egmu")
+
+[node name="BombTake" type="Node" parent="StateMachine"]
+script = ExtResource("26_07nfl")
+
+[node name="ExplotionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 25
+script = ExtResource("27_vgsju")
+connect_body_entered = true
+connect_body_exited = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplotionArea"]
+position = Vector2(-8.30516e-07, -29)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_ds6og")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("28_r8lhm")
+physics_attack = 3
+back_off_power = Vector2(300, -200)

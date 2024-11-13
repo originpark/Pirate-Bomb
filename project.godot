@@ -29,6 +29,10 @@ folder_colors={
 "res://test/": "green"
 }
 
+[global_group]
+
+player=""
+
 [input]
 
 action_left={
@@ -51,12 +55,19 @@ action_primary={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(217, 16),"global_position":Vector2(231, 84),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+action_secondary={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(93, 15),"global_position":Vector2(107, 83),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [layer_names]
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="terrain"
 2d_physics/layer_3="bomb"
+2d_physics/layer_4="enemy"
+2d_physics/layer_5="friend"
 
 [rendering]
 

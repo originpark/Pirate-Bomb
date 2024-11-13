@@ -4,17 +4,19 @@ extends CharacterBody2D
 const BOMB = preload("res://entity/bomb/bomb.tscn")
 
 # 玩家输入检测
+var action_lock: bool = false
 var action_get_axis: int
 var action_just_pressed_jump: bool
 var action_pressed_primary: bool
 var action_just_pressed_primary: bool
 var action_just_released_primary: bool
+var action_just_pressed_secondary: bool
 
 # 角色属性
 var run_speed: float = 150.0
 var jump_power: float = -500.0
 
-# 投掷炸弹相关的数值
+ #投掷炸弹相关的数值
 var max_throw_power_x: float = 500.0
 var max_throw_power_y: float = -250.0
 var max_accumulate_time: float = 1.0
@@ -25,6 +27,15 @@ var current_accumulate_time: float = 0.0
 @onready var direction: Direction = $Direction
 @onready var graphics: Node2D = $Graphics
 @onready var energy_bar: EnergyBar = $EnergyBar
+@onready var stats: Stats = $Stats
+@onready var decelerate: Decelerate = $Decelerate
+
+
+# 逻辑工具
+var can_attack:bool = true
+var v_lock:bool = false
+var is_hurt: bool = false
+var is_died: bool = false
 
 
 func _ready() -> void:
@@ -32,6 +43,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	#print(get_tree().get_frame(), ": ",  velocity.x)
 	direction.value = action_get_axis
 	throw_bomb(delta)
 	move_and_slide()
@@ -52,3 +64,14 @@ func throw_bomb(delta: float) -> void:
 		energy_bar.hide()
 		current_accumulate_time = 0.0
 		energy_bar.texture_progress_bar.value = 0
+
+
+func _to_string() -> String:
+	return "BombGuy"
+
+
+func died() -> void:
+	action_get_axis = 0
+	v_lock = true
+	action_lock = true
+	is_died = true

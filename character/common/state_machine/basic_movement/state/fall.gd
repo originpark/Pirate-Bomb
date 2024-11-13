@@ -15,6 +15,12 @@ func enter() -> void:
 	
 
 func physics_update(delta: float) -> void:
+	if target.stats.heart <= 0:
+		transition_to("Died")
+		return
+	if target.is_hurt:
+		transition_to("Hurt")
+		return
 	if target.is_on_floor():
 		if state_machine.current_state_run_time > 0.3:
 			transition_to("Ground")
@@ -25,8 +31,10 @@ func physics_update(delta: float) -> void:
 	if can_coyote_jump and target.action_just_pressed_jump:
 		transition_to("Jump")
 		return
-	target.velocity.x = target.action_get_axis * target.run_speed
+	if not target.v_lock:
+		target.velocity.x = target.action_get_axis * target.run_speed
 
 
 func exit() -> void:
-	target.velocity.x = 0
+	if not target.v_lock:
+		target.velocity.x = 0

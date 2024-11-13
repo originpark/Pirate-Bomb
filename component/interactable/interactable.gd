@@ -62,12 +62,12 @@ func _ready() -> void:
 	elif target == Target.PARENT:
 		_target = get_parent()
 	_name_format = name.capitalize().replace(" ", "_").to_lower()
-	_check_body_entered = true if _target.get("interact_body_" + _name_format) else false
-	_check_body_list_entered = true if _target.get("interact_body_list_" + _name_format) else false
+	_check_body_entered = true if ("interact_body_" + _name_format) in _target else false
+	_check_body_list_entered = true if ("interact_body_list_" + _name_format) in _target else false
 	_check_body_exited = _check_body_entered
-	_check_body_list_entered = _check_body_list_entered
-	_check_area_entered = true if _target.get("interact_area_" + _name_format) else false
-	_check_area_list_entered = true if _target.get("interact_area_list_" + _name_format) else false
+	_check_body_list_exited = _check_body_list_entered
+	_check_area_entered = true if ("interact_area_" + _name_format) in _target else false
+	_check_area_list_entered = true if ("interact_body_list_" + _name_format) in _target else false
 	_check_area_list_entered = _check_area_entered
 	_check_area_list_exited = _check_area_exited
 

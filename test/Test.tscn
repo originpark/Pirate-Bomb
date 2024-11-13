@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bseimrfskxhx2"]
+[gd_scene load_steps=5 format=3 uid="uid://bseimrfskxhx2"]
 
 [ext_resource type="Script" path="res://test/test.gd" id="1_ab54e"]
-[ext_resource type="PackedScene" uid="uid://bj46uigkkymwa" path="res://character/bomb_guy/bomb_guy.tscn" id="2_hc17g"]
+[ext_resource type="PackedScene" uid="uid://c0cmvth32t6vu" path="res://character/bald_pirate/bald_pirate.tscn" id="2_wfqsf"]
+[ext_resource type="Script" path="res://component/camera/camera.gd" id="3_gxhpa"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o4xtr"]
 
@@ -9,13 +10,19 @@
 script = ExtResource("1_ab54e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(264, 288)
+position = Vector2(89, 0)
 collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_o4xtr")
 
-[node name="BombGuy" parent="." instance=ExtResource("2_hc17g")]
-position = Vector2(273, 142)
-velocity = Vector2(0, 371050)
+[node name="BaldPirate" parent="." instance=ExtResource("2_wfqsf")]
+position = Vector2(22, -21)
+
+[node name="Camera" type="Camera2D" parent="BaldPirate"]
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("3_gxhpa")

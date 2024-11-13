@@ -21,6 +21,11 @@ var next_state: String = ""
 ## 历史状态
 var _history_states: Array[String] = []
 
+## 消息
+var message: Dictionary
+
+var disable: bool = false
+
 
 func _ready() -> void:
 	_before_load()
@@ -33,8 +38,6 @@ func _ready() -> void:
 	_before_start()
 	if initial_state:
 		_add_history_state(initial_state.name)
-		print(owner)
-		print(initial_state.owner)
 		initial_state.enter()
 		current_state = initial_state
 	
@@ -63,9 +66,9 @@ func change_state(from: StateBase, to: String) -> void:
 	if !new_state:
 		print("error: 不存在状态: ", to)
 		return
-	
 	next_state = new_state.name
-	cs.exit()
+	if cs:
+		cs.exit()
 	next_state = ""
 	_add_history_state(new_state.name)
 	new_state.enter()
@@ -95,3 +98,17 @@ func _before_load() -> void:
 
 func _before_start() -> void:
 	pass
+
+
+func set_message(key: String, value) -> void:
+	message[key] = value
+	
+
+func get_message(key: String) -> Object:
+	if message.has(key):
+		if not is_instance_valid(message[key]):
+			message.erase(key)
+			return null
+		return message[key]
+	else:
+		return null
