@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://c0cmvth32t6vu"]
+[gd_scene load_steps=114 format=3 uid="uid://c0cmvth32t6vu"]
 
 [ext_resource type="Script" path="res://character/bald_pirate/bald_pirate.gd" id="1_ans74"]
 [ext_resource type="Texture2D" uid="uid://x82pvm08xupx" path="res://asset/graphics/2-Enemy-Bald Pirate/5-Fall/1.png" id="1_d3hnr"]
@@ -96,6 +96,7 @@
 [ext_resource type="Script" path="res://character/common/state_machine/basic_movement/basic_state_machine.gd" id="75_t21r7"]
 [ext_resource type="Script" path="res://character/bald_pirate/state/bald_pirate_secondary_action.gd" id="76_m1qli"]
 [ext_resource type="Script" path="res://character/common/state_machine/ai_control/ai_state_machine.gd" id="77_lt4hq"]
+[ext_resource type="Script" path="res://character/bald_pirate/state/bald_pirate_primary_action.gd" id="94_2xg2r"]
 [ext_resource type="Script" path="res://component/stats/stats.gd" id="97_x526f"]
 [ext_resource type="Script" path="res://component/decelerate/decelerate.gd" id="98_jr0gx"]
 
@@ -461,6 +462,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BasicStateMachine/BaldPiratePrimaryAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ethde"]
 resource_name = "died"
@@ -681,13 +696,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2bypj"]
-size = Vector2(523, 137)
+size = Vector2(523, 115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66w1v"]
 size = Vector2(28, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63i01"]
-size = Vector2(164, 58)
+size = Vector2(196, 58)
 
 [node name="BaldPirate" type="CharacterBody2D"]
 collision_layer = 8
@@ -707,17 +722,19 @@ libraries = {
 }
 
 [node name="CharacterSight" type="Area2D" parent="Graphics"]
+visible = false
 collision_layer = 0
 script = ExtResource("69_638uh")
 connect_body_entered = true
 connect_body_exited = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/CharacterSight"]
-position = Vector2(227.5, -65.5)
+position = Vector2(227.5, -54.5)
 shape = SubResource("RectangleShape2D_2bypj")
 debug_color = Color(0.906264, 0.000127258, 0.743912, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -29)
 shape = SubResource("RectangleShape2D_66w1v")
 
@@ -733,7 +750,7 @@ script = ExtResource("75_t21r7")
 run_dust_offset = Vector2(-15, -1)
 
 [node name="BaldPiratePrimaryAction" type="Node" parent="BasicStateMachine"]
-script = ExtResource("76_m1qli")
+script = ExtResource("94_2xg2r")
 
 [node name="BaldPirateSecondaryAction" type="Node" parent="BasicStateMachine"]
 script = ExtResource("76_m1qli")
@@ -744,6 +761,7 @@ use_costom_gravity = true
 custom_gravity = 1500.0
 
 [node name="BombSight" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("69_638uh")
@@ -764,6 +782,8 @@ move_time_max = 3.0
 move_time_min = 1.0
 wall_ray_cast_length = 20.0
 track_mode = 1
+bomb_track_offset = 30.0
+character_track_offset = 30.0
 fall_offset = -14.0
 cool_time = 2.0
 

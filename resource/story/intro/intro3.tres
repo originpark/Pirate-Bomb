@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DialogueList" load_steps=5 format=3 uid="uid://bqer5j7cg56t3"]
+
+[ext_resource type="Script" path="res://component/dialogue/dialogue_list.gd" id="1_w1n6j"]
+[ext_resource type="Script" path="res://component/dialogue/dialogue.gd" id="2_gif23"]
+
+[sub_resource type="Resource" id="Resource_6tnie"]
+script = ExtResource("2_gif23")
+actor_id = 0
+content = "接下来是强壮的肌肉兄弟独眼小海盗和呆萌大水手"
+
+[sub_resource type="Resource" id="Resource_afq66"]
+script = ExtResource("2_gif23")
+actor_id = 0
+content = "一个是足球高手, 一个是篮球高手"
+
+[resource]
+script = ExtResource("1_w1n6j")
+value = Array[ExtResource("2_gif23")]([SubResource("Resource_6tnie"), SubResource("Resource_afq66")])

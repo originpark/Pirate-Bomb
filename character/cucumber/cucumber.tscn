@@ -507,6 +507,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BasicStateMachine/CucumberPrimaryAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_slnf8"]
 resource_name = "blow"
@@ -756,13 +770,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acrag"]
-size = Vector2(320, 206)
+size = Vector2(320, 57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pntc"]
 size = Vector2(20, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8oui"]
-size = Vector2(112, 57)
+size = Vector2(148, 57)
 
 [node name="Cucumber" type="CharacterBody2D"]
 collision_layer = 8
@@ -789,7 +803,7 @@ connect_body_entered = true
 connect_body_exited = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/CharacterSight"]
-position = Vector2(117, -105)
+position = Vector2(117, -30.5)
 shape = SubResource("RectangleShape2D_acrag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -829,7 +843,7 @@ wall_ray_cast_length = 15.0
 track_mode = 1
 bomb_track_offset = 30.0
 character_track_offset = 20.0
-fall_offset = -10.0
+fall_offset = -5.0
 cool_time = 3.0
 
 [node name="BombSight" type="Area2D" parent="."]

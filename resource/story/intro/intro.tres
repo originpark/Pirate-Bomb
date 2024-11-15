@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="DialogueList" load_steps=9 format=3 uid="uid://bvk4j7sa4puh3"]
+
+[ext_resource type="Script" path="res://component/dialogue/dialogue_list.gd" id="1_kpdto"]
+[ext_resource type="Script" path="res://component/dialogue/dialogue.gd" id="2_qk7ki"]
+
+[sub_resource type="Resource" id="Resource_gafyy"]
+script = ExtResource("2_qk7ki")
+actor_id = 0
+content = "你好, 我是炸弹小子"
+
+[sub_resource type="Resource" id="Resource_x4qts"]
+script = ExtResource("2_qk7ki")
+actor_id = 0
+content = "这是一个玩法测试demo"
+
+[sub_resource type="Resource" id="Resource_tahp6"]
+script = ExtResource("2_qk7ki")
+actor_id = 0
+content = "鼠标左键(按钮)可以放置一枚炸弹"
+
+[sub_resource type="Resource" id="Resource_vurym"]
+script = ExtResource("2_qk7ki")
+actor_id = 0
+content = "长按可以蓄力, 松开就能将炸弹投掷到更远的地方"
+
+[sub_resource type="Resource" id="Resource_kewft"]
+script = ExtResource("2_qk7ki")
+actor_id = 0
+content = "当心不要伤到自己哦"
+
+[sub_resource type="Resource" id="Resource_mlxlc"]
+script = ExtResource("2_qk7ki")
+actor_id = 0
+content = "试着熟悉一下操作, 准备开始迎接第一个敌人吧~"
+
+[resource]
+script = ExtResource("1_kpdto")
+value = Array[ExtResource("2_qk7ki")]([SubResource("Resource_gafyy"), SubResource("Resource_x4qts"), SubResource("Resource_tahp6"), SubResource("Resource_vurym"), SubResource("Resource_kewft"), SubResource("Resource_mlxlc")])

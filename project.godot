@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pirate-Bomb-Rev1"
-run/main_scene="res://map/Level01.tscn"
+run/main_scene="res://map/intro/intro.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+TimeLine="*res://global/time_line/time_line.gd"
 
 [display]
 

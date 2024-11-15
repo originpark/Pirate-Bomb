@@ -5,7 +5,7 @@ extends StateBase
 var stand_time: float
 var move_time: float
 var turn_around: bool
-
+var floor_turn_around: bool = false
 
 var timer: SceneTreeTimer
 var can_move: bool = false
@@ -21,11 +21,13 @@ func enter() -> void:
 	
 
 func physics_update(delta: float) -> void:
+	if (state_machine as AIStateMachine).floor_ray_cast.is_colliding() and floor_turn_around:
+		floor_turn_around = false
 	if (state_machine as AIStateMachine).wall_ray_cast.is_colliding():
 		target.action_get_axis = target.direction.value * -1
-	if not (state_machine as AIStateMachine).floor_ray_cast.is_colliding():
-		#print("有悬崖")
-		target.action_get_axis = 0
+	if not (state_machine as AIStateMachine).floor_ray_cast.is_colliding() and not floor_turn_around:
+		target.action_get_axis = target.direction.value * -1
+		floor_turn_around = true
 	if target.interact_body_list_bomb_sight or target.interact_body_character_sight:
 		transition_to("AiTrack")
 		return

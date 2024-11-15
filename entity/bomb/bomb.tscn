@@ -282,7 +282,7 @@ script = ExtResource("26_07nfl")
 
 [node name="ExplotionArea" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 25
+collision_mask = 29
 script = ExtResource("27_vgsju")
 connect_body_entered = true
 connect_body_exited = true
@@ -294,5 +294,7 @@ shape = SubResource("RectangleShape2D_ds6og")
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("28_r8lhm")
+back_off_enable = true
 physics_attack = 3
 back_off_power = Vector2(300, -200)
+back_off_defence = -300

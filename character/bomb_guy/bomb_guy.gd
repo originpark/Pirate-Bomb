@@ -29,6 +29,7 @@ var current_accumulate_time: float = 0.0
 @onready var energy_bar: EnergyBar = $EnergyBar
 @onready var stats: Stats = $Stats
 @onready var decelerate: Decelerate = $Decelerate
+@onready var bubble_marker: Marker2D = $BubbleMarker
 
 
 # 逻辑工具

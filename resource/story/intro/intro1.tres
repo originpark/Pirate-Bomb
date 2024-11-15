@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DialogueList" load_steps=7 format=3 uid="uid://bow4dcun2y74w"]
+
+[ext_resource type="Script" path="res://component/dialogue/dialogue_list.gd" id="1_428ii"]
+[ext_resource type="Script" path="res://component/dialogue/dialogue.gd" id="2_p1ed7"]
+
+[sub_resource type="Resource" id="Resource_qb3dh"]
+script = ExtResource("2_p1ed7")
+actor_id = 0
+content = "第一个敌人是骷髅帽断手粉粉钩爪船长......"
+
+[sub_resource type="Resource" id="Resource_m25h6"]
+script = ExtResource("2_p1ed7")
+actor_id = 0
+content = "他对你的炸弹毫无抵抗之力, 只有逃跑的份"
+
+[sub_resource type="Resource" id="Resource_0tn33"]
+script = ExtResource("2_p1ed7")
+actor_id = 0
+content = "但是别看他眼睛小, 他的视力可是一绝"
+
+[sub_resource type="Resource" id="Resource_wvxct"]
+script = ExtResource("2_p1ed7")
+actor_id = 0
+content = "请记住, 你绝对不会想给他机会靠近你的......"
+
+[resource]
+script = ExtResource("1_428ii")
+value = Array[ExtResource("2_p1ed7")]([SubResource("Resource_qb3dh"), SubResource("Resource_m25h6"), SubResource("Resource_0tn33"), SubResource("Resource_wvxct")])

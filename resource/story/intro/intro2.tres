@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DialogueList" load_steps=5 format=3 uid="uid://dcaljbvhvu7k8"]
+
+[ext_resource type="Script" path="res://component/dialogue/dialogue_list.gd" id="1_wg62r"]
+[ext_resource type="Script" path="res://component/dialogue/dialogue.gd" id="2_40q0o"]
+
+[sub_resource type="Resource" id="Resource_t8ydf"]
+script = ExtResource("2_40q0o")
+actor_id = 0
+content = "接下来是鲸鱼战士和鲶鱼男孩"
+
+[sub_resource type="Resource" id="Resource_svi8d"]
+script = ExtResource("2_40q0o")
+actor_id = 0
+content = "一个胃很大, 一个肺很大......"
+
+[resource]
+script = ExtResource("1_wg62r")
+value = Array[ExtResource("2_40q0o")]([SubResource("Resource_t8ydf"), SubResource("Resource_svi8d")])

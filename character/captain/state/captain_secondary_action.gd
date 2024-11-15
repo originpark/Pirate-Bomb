@@ -30,6 +30,8 @@ func physics_update(delta: float) -> void:
 	if (target.interact_body_list_bomb_sight as Array).size() == 0:
 		transition_to("Idle")
 		return
+	if (target.ai_state_machine as AIStateMachine).wall_ray_cast.is_colliding():
+		target.action_get_axis = target.direction.value * -1
 	var bomb_list: Array[Bomb] = target.interact_body_list_bomb_sight
 	var nearest_bomb: Bomb
 	var min_distance := 65535.0
@@ -40,7 +42,7 @@ func physics_update(delta: float) -> void:
 		if distance < min_distance:
 			min_distance = distance
 			nearest_bomb = bomb
-	if can_turn_back:
+	if can_turn_back and is_instance_valid(nearest_bomb):
 		target.action_get_axis = 1 if nearest_bomb.global_position.x < target.global_position.x else -1
 		can_turn_back = false
 		get_tree().create_timer(0.3).timeout.connect(func (): can_turn_back = true)

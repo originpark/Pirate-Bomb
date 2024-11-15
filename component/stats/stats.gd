@@ -11,7 +11,7 @@ var heart: int
 
 @export var back_off_power: Vector2
 
-@export_range(0, 300) var back_off_defence: int
+@export_range(-1000, 300) var back_off_defence: int
 
 
 func _ready() -> void:

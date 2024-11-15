@@ -57,3 +57,4 @@ func died() -> void:
 	v_lock = true
 	action_lock = true
 	is_died = true
+	ai_state_machine.disable = true

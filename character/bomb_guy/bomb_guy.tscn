@@ -565,9 +565,8 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i5qg5"]
-radius = 18.0
-height = 50.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq5fi"]
+size = Vector2(32, 49)
 
 [node name="BombGuy" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
@@ -586,8 +585,8 @@ sprite_frames = SubResource("SpriteFrames_p5xl7")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -25)
-shape = SubResource("CapsuleShape2D_i5qg5")
+position = Vector2(0, -24.5)
+shape = SubResource("RectangleShape2D_oq5fi")
 
 [node name="ControlAble" type="Node" parent="."]
 script = ExtResource("52_2ao3w")
@@ -617,8 +616,11 @@ position = Vector2(-19, -56)
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("59_inc1m")
 back_off_enable = true
-max_heart = 4
+max_heart = 5
 
 [node name="Decelerate" type="Node" parent="."]
 script = ExtResource("60_cdvny")
 acceleration = 10
+
+[node name="BubbleMarker" type="Marker2D" parent="."]
+position = Vector2(24, -51)

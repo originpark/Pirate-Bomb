@@ -5,6 +5,9 @@ extends StateBase
 func enter() -> void:
 	target.action_just_pressed_primary = false
 	target.animation_player.play("attack")
+
+
+func attack() -> void:
 	var obj := state_machine.get_message("target_character") 
 	var dir = target.direction.value
 	target.can_attack = false

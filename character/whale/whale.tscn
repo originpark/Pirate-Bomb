@@ -539,6 +539,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BasicStateMachine/WhalePrimaryAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_k0jbi"]
 resource_name = "died"
@@ -803,13 +817,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo557"]
-size = Vector2(299, 90)
+size = Vector2(299, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wa0ti"]
 size = Vector2(50, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oy6vy"]
-size = Vector2(138, 39)
+size = Vector2(178, 39)
 
 [node name="Whale" type="CharacterBody2D"]
 z_index = 1
@@ -831,14 +845,13 @@ libraries = {
 }
 
 [node name="CharacterSight" type="Area2D" parent="Graphics"]
-visible = false
 collision_layer = 0
 script = ExtResource("104_kyckf")
 connect_body_entered = true
 connect_body_exited = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/CharacterSight"]
-position = Vector2(88.5, -46)
+position = Vector2(88.5, -21)
 shape = SubResource("RectangleShape2D_uo557")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -864,7 +877,6 @@ script = ExtResource("102_2qb1u")
 script = ExtResource("103_ho1vr")
 
 [node name="BombSight" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("104_kyckf")

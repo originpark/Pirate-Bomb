@@ -199,6 +199,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BasicStateMachine/BigGuyPrimaryAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_jqjra"]
 resource_name = "died"
@@ -991,13 +1005,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e571h"]
-size = Vector2(737, 374)
+size = Vector2(409, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmb0k"]
 size = Vector2(44, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4n8jp"]
-size = Vector2(162, 62)
+size = Vector2(184, 62)
 
 [node name="BigGuy" type="CharacterBody2D"]
 collision_layer = 8
@@ -1017,16 +1031,18 @@ sprite_frames = SubResource("SpriteFrames_vu5cq")
 animation = &"idle"
 
 [node name="CharacterSight" type="Area2D" parent="Graphics"]
+visible = false
 collision_layer = 0
 script = ExtResource("115_1gms8")
 connect_body_entered = true
 connect_body_exited = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/CharacterSight"]
-position = Vector2(310.5, -34)
+position = Vector2(146.5, -54.5)
 shape = SubResource("RectangleShape2D_e571h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -31)
 shape = SubResource("RectangleShape2D_vmb0k")
 
@@ -1043,6 +1059,7 @@ custom_gravity = 1500.0
 script = ExtResource("114_fo54n")
 
 [node name="BombSight" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("115_1gms8")
@@ -1079,7 +1096,7 @@ stand_time_max = 5.0
 stand_time_min = 2.0
 move_time_max = 3.0
 move_time_min = 1.0
-wall_ray_cast_length = 20.0
+wall_ray_cast_length = 30.0
 track_mode = 1
 bomb_track_offset = 5.0
 character_track_offset = 40.0

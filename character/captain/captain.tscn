@@ -487,6 +487,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BasicStateMachine/CaptainPrimaryAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_741mq"]
 resource_name = "died"
@@ -607,6 +621,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_371l2"]
 resource_name = "idle"
 length = 1.6
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -737,7 +752,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q40av"]
-size = Vector2(341, 154)
+size = Vector2(577, 546)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncf10"]
 size = Vector2(27, 66)
@@ -763,18 +778,16 @@ libraries = {
 }
 
 [node name="CharacterSight" type="Area2D" parent="Graphics"]
-visible = false
 collision_layer = 0
 script = ExtResource("84_mhs8v")
 connect_body_entered = true
 connect_body_exited = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/CharacterSight"]
-position = Vector2(114.5, -77)
+position = Vector2(146.5, -68)
 shape = SubResource("RectangleShape2D_q40av")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0.5, -33)
 shape = SubResource("RectangleShape2D_ncf10")
 
@@ -811,7 +824,7 @@ wall_ray_cast_length = 20.0
 track_mode = 1
 bomb_track_offset = 30.0
 character_track_offset = 30.0
-fall_offset = -12.0
+fall_offset = -5.0
 cool_time = 3.0
 
 [node name="BombSight" type="Area2D" parent="."]
